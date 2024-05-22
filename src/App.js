@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
+import Header from './components/Header';
+import ListContainer from './components/ListContainer';
+
+const theme = createTheme({
+    palette: {
+      gray: {
+        main: '#ffffff3d',
+        contrastText: '#ffffff',
+      },
+    },
+});
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <Header/>
+        <main className="App-main">
+          <ListContainer/>
+        </main>
+      </ThemeProvider>
     </div>
   );
 }
