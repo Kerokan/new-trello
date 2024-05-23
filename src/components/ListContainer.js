@@ -12,10 +12,42 @@ const ListContainer = () => {
     // Retrieve list from local storage if exists
     const storedLists = localStorage.getItem("new-trello-lists");
 
-    return storedLists ? JSON.parse(storedLists) : [{
-      id: '41ebb126-d585-4ed2-899f-5186079d1ce8', 
-      name: 'My first list'
-    }];
+    return storedLists ? JSON.parse(storedLists) : [
+      {
+        id: '41ebb126-d585-4ed2-899f-5186079d1ce8', 
+        name: 'My first list',
+        cards: [
+          {
+            id: 'c4a0b39b-dbf5-4d18-b59c-d4a394abe6fb',
+            name: 'My first card',
+            description: '',
+            isFollowed: false,
+          }, {
+            id: '327078b9-183f-405d-ad23-5fbd94415e4d',
+            name: 'My second card',
+            description: '',
+            isFollowed: false,
+          }, {
+            id: '9dd4ae90-9f0d-41b0-a6c2-0f515b009c7f',
+            name: 'Followed card',
+            description: '',
+            isFollowed: true,
+          }
+        ]
+      }, 
+      {
+        id: 'dc91f92b-e129-4110-ad2f-1e5d8ba52074', 
+        name: 'My second list',
+        cards: [
+          {
+            id: 'fb8a7f98-6190-46a3-9828-e3f31dd45f87',
+            name: 'Followed card with description',
+            description: 'My first description',
+            isFollowed: true,
+          }
+        ]
+      }
+    ];
   });
   const [listAddOpen, setListAddOpen] = useState(false);
   const [elementToDisplay, setElementToDisplay] = useState(null);
