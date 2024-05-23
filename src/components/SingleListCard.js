@@ -46,31 +46,31 @@ const SingleListCard = ({$list, $index, $deleteList, $addCard, $openCard}) => {
       {$list.name}
       <MoreHorizIcon color='action' sx={{fontSize: '18px', cursor: 'pointer'}} onClick={handleDeleteList}/>
     </Box>
-      <List sx={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
-        {$list.cards && $list.cards.map((element, index) => <CardElement key={element.id} $element={element} $openCard={() => $openCard(index)} />)}
-        <Box sx={{display: 'flex'}}> 
-      {addCardInputOpen ? <CardAdder $handleValidate={handleAddCard} $handleCancel={handleCloseAddCard} /> : <Button sx={{
-        display: 'flex', 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        justifyContent: 'flex-start', 
-        gap: '6px', 
-        textTransform: 'none', 
-        width: '272px',
-        backgroundColor: '#ebecf0',
-        color: '#0000008a',
-        '&:hover': {
-          backgroundColor: '#d4d6da',
-        },
-      }}
+    <List sx={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
+      {$list.cards && $list.cards.map((element, index) => <CardElement key={element.id} $element={element} $openCard={() => $openCard(index)} />)}
+      <Box sx={{display: 'flex'}}> 
+        {addCardInputOpen ? <CardAdder $handleValidate={handleAddCard} $handleCancel={handleCloseAddCard} /> : <Button sx={{
+          display: 'flex', 
+          flexDirection: 'row', 
+          alignItems: 'center', 
+          justifyContent: 'flex-start', 
+          gap: '6px', 
+          textTransform: 'none', 
+          width: '272px',
+          backgroundColor: '#ebecf0',
+          color: '#0000008a',
+          '&:hover': {
+            backgroundColor: '#d4d6da',
+          },
+        }}
         onClick={() => {setAddCardInputOpen(true)}}
-      >
-        <AddIcon sx={{fontSize: '18px'}} />
-        Ajouter une {$list.cards.length > 0 ? 'autre carte' : 'carte'}
-      </Button>}
-    </Box>
-      </List>
-    </Card>
+        >
+          <AddIcon sx={{fontSize: '18px'}} />
+          Ajouter une {$list.cards.length > 0 ? 'autre carte' : 'carte'}
+        </Button>}
+      </Box>
+    </List>
+  </Card>
 }
 
 export default SingleListCard;

@@ -5,17 +5,16 @@ import NoteIcon from '@mui/icons-material/Notes';
 const CardElement = ({$element, $openCard}) => {
   return (
     <Card sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      width: '100%',
-      padding: '6px',
-      boxSizing: 'border-box', 
-      cursor: 'pointer',
-      gap: '6px'
-    }}
-      onClick={$openCard}
-    >
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '100%',
+        padding: '6px',
+        boxSizing: 'border-box', 
+        cursor: 'pointer',
+        gap: '6px'
+      }}
+      onClick={$openCard}>
       {$element.name}
       <Box sx={{
         display: 'flex',

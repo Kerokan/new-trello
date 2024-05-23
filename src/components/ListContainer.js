@@ -212,14 +212,14 @@ const ListContainer = () => {
         gap: '8px',
         maxWidth: '100%'
       }}>
-      {lists.map((singleList, index) => <SingleListCard 
-        key={singleList.id} 
-        $list={singleList} 
-        $index={index} 
-        $deleteList={handleDeleteList} 
-        $addCard={handleAddCard} 
-        $openCard={(idx) => openCard(index, idx)}
-      />)}
+        {lists.map((singleList, index) => <SingleListCard 
+          key={singleList.id} 
+          $list={singleList} 
+          $index={index} 
+          $deleteList={handleDeleteList} 
+          $addCard={handleAddCard} 
+          $openCard={(idx) => openCard(index, idx)}
+        />)}
         {listAddOpen ? < ListAdder $handleCancel={() => setListAddOpen(false)} $handleValidate={handleAddList}/> : <Box sx={{display: 'flex'}}> 
           <Button sx={{
             display: 'flex', 

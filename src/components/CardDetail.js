@@ -94,33 +94,45 @@ const CardDetail = ({$card, $listTitle, $open, $onClose, $editCard, $deleteCard}
             Description
             {changeDescription ? <Box sx={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
               <Card>
-      <textarea style={{minWidth: '100%', maxWidth: '362px', minHeight: '62px', border: 'none', outline: 'none', padding: '6px 6px 0 6px', boxSizing: 'border-box'}} placeholder="Saisissez un titre pour cette carte..." value={description} onChange={(e) => setDescription(e.target.value)} />
-    </Card>
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      gap: '6px'
-    }}>
-      <Button           
-          variant='contained' 
-          color='success' 
-          sx={{
-            maxWidth: '156px',
-            backgroundColor: '#5aac44',
-            height: '32px',
-            textTransform: 'none',
-            '&:hover': {
-              backgroundColor: '#61bd4f', 
-            }
-          }}
-          onClick={handleChangeDescription}
-        >
-        Enregistrer
-      </Button>
-      <CloseIcon sx={{cursor: 'pointer'}} color='action' onClick={handleCancel}/>
-    </Box>
+                <textarea style={{
+                  minWidth: '100%', 
+                  maxWidth: '362px', 
+                  minHeight: '62px', 
+                  border: 'none', 
+                  outline: 'none', 
+                  padding: '6px 6px 0 6px', 
+                  boxSizing: 'border-box'
+                }} 
+                placeholder="Saisissez un titre pour cette carte..." 
+                value={description} 
+                onChange={(e) => setDescription(e.target.value)} 
+                />
+              </Card>
+              <Box sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                gap: '6px'
+              }}>
+                <Button           
+                  variant='contained' 
+                  color='success' 
+                  sx={{
+                    maxWidth: '156px',
+                    backgroundColor: '#5aac44',
+                    height: '32px',
+                    textTransform: 'none',
+                    '&:hover': {
+                      backgroundColor: '#61bd4f', 
+                    }
+                  }}
+                  onClick={handleChangeDescription}
+                >
+                  Enregistrer
+                </Button>
+                <CloseIcon sx={{cursor: 'pointer'}} color='action' onClick={handleCancel}/>
+              </Box>
             </Box> 
             : description ? <Box sx={{
               fontSize: '14px', 
@@ -129,8 +141,8 @@ const CardDetail = ({$card, $listTitle, $open, $onClose, $editCard, $deleteCard}
             }}
             onClick={() => setChangeDescription(true)}
             >
-                {description}
-              </Box> : <Button sx={{
+              {description}
+            </Box> : <Button sx={{
               display: 'flex', 
               flexDirection: 'row', 
               alignItems: 'center', 
@@ -148,7 +160,7 @@ const CardDetail = ({$card, $listTitle, $open, $onClose, $editCard, $deleteCard}
             onClick={() => setChangeDescription(true)}
             >
               Ajouter une description plus détaillée...
-          </Button>}
+            </Button>}
           </Box>
           <Box sx={{
             minWidth: '170px',

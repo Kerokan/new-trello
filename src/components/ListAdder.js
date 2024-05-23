@@ -28,18 +28,18 @@ const ListAdder = ({$handleValidate, $handleCancel}) => {
       gap: '6px'
     }}>
       <Button           
-          variant='contained' 
-          color='success' 
-          sx={{
-            maxWidth: '156px',
-            backgroundColor: '#5aac44',
-            height: '32px',
-            textTransform: 'none',
-            '&:hover': {
-              backgroundColor: '#61bd4f', 
-            }
-          }}
-          onClick={handleValidate}
+        variant='contained' 
+        color='success' 
+        sx={{
+          maxWidth: '156px',
+          backgroundColor: '#5aac44',
+          height: '32px',
+          textTransform: 'none',
+          '&:hover': {
+            backgroundColor: '#61bd4f', 
+          }
+        }}
+        onClick={handleValidate}
         >
         Ajouter une liste
       </Button>
