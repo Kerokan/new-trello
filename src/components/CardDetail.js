@@ -59,23 +59,30 @@ const CardDetail = ({$card, $listTitle, $open, $onClose, $editCard, $deleteCard}
         <Box sx={{
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          fontSize: '20px', 
-          fontWeight: 600
+          flexDirection: 'row',
         }}>
-          {$card.name}
           <Box sx={{
             width: '100%',
             display: 'flex',
-            flexDirection: 'row',
-            fontSize: '14px', 
-            fontWeight: 300, 
-            gap: '4px'
+            flexDirection: 'column',
+            fontSize: '20px', 
+            fontWeight: 600
           }}>
-            Dans la liste 
-            <span style={{textDecoration: 'underline'}}>{$listTitle}</span>
-            {$card.isFollowed && <VisibilityIcon color='action' sx={{fontSize: '16px'}} />}
+            {$card.name}
+            <Box sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              fontSize: '14px', 
+              fontWeight: 300, 
+              gap: '4px'
+            }}>
+              Dans la liste 
+              <span style={{textDecoration: 'underline'}}>{$listTitle}</span>
+              {$card.isFollowed && <VisibilityIcon color='action' sx={{fontSize: '16px'}} />}
+            </Box>
           </Box>
+          <CloseIcon sx={{cursor: 'pointer'}} color='action' onClick={$onClose}/>
         </Box>
         <Box sx={{
           width: '100%',
