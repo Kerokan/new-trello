@@ -21,7 +21,7 @@ const Header = () => {
           }
         }}
       >
-        <img height='30px' src='logo_trello.png'/>
+        <img height='30px' src='logo_trello.png' alt='Logo de Trello'/>
       </Box>
     </Box>
   );

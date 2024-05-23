@@ -1,4 +1,4 @@
-import { Box, Card, List, Button, Alert, AlertTitle } from '@mui/material';
+import { Box, Card, List, Button } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import AddIcon from '@mui/icons-material/Add';
 import CardElement from './CardElement';
@@ -6,7 +6,7 @@ import { useState } from 'react';
 import CardAdder from './CardAdder';
 
 
-const SingleListCard = ({$list, $index, $deleteList, $addCard}) => {
+const SingleListCard = ({$list, $index, $deleteList, $addCard, $openCard}) => {
   const [addCardInputOpen, setAddCardInputOpen] = useState(false);
 
   const handleDeleteList = () => {
@@ -47,7 +47,7 @@ const SingleListCard = ({$list, $index, $deleteList, $addCard}) => {
       <MoreHorizIcon color='action' sx={{fontSize: '18px', cursor: 'pointer'}} onClick={handleDeleteList}/>
     </Box>
       <List sx={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
-        {$list.cards && $list.cards.map((element) => <CardElement key={element.id} $element={element} />)}
+        {$list.cards && $list.cards.map((element, index) => <CardElement key={element.id} $element={element} $openCard={() => $openCard(index)} />)}
         <Box sx={{display: 'flex'}}> 
       {addCardInputOpen ? <CardAdder $handleValidate={handleAddCard} $handleCancel={handleCloseAddCard} /> : <Button sx={{
         display: 'flex', 
@@ -66,7 +66,7 @@ const SingleListCard = ({$list, $index, $deleteList, $addCard}) => {
         onClick={() => {setAddCardInputOpen(true)}}
       >
         <AddIcon sx={{fontSize: '18px'}} />
-        Ajouter une autre carte
+        Ajouter une {$list.cards.length > 0 ? 'autre carte' : 'carte'}
       </Button>}
     </Box>
       </List>
